@@ -2,6 +2,8 @@ package com.cable.controllers;
 
 import java.security.Principal;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,8 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cable.entities.User;
 import com.cable.services.AuthService;
-
-import jakarta.servlet.http.HttpServletResponse;
 
 @RestController
 @CrossOrigin({"*", "http://localhost/"})

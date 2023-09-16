@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 
 import javax.persistence.*;
 
+@Entity
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,8 +22,6 @@ public class User {
 
 	private String avatar;
 	
-	@OneToOne
-	@JoinColumn(name = "created_at")
 	private LocalDateTime createdAt;
 
 	public int getUserId() {

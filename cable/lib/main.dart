@@ -1,3 +1,4 @@
+import 'package:cable/screens/chat_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:cable/screens/auth_screen.dart';
 
@@ -17,7 +18,7 @@ class Cable extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(
             seedColor: const Color.fromARGB(255, 56, 223, 181)),
       ),
-      home: const AuthScreen(),
+      home: ChatScreen(),
     );
   }
 }

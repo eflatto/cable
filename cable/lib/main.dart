@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cable/screens/auth_screen.dart';
 
 void main() {
   runApp(const Cable());
@@ -16,6 +17,7 @@ class Cable extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(
             seedColor: const Color.fromARGB(255, 23, 213, 156)),
       ),
+      home: const AuthScreen(),
     );
   }
 }

@@ -1,5 +1,5 @@
 # Cable. For Fifteen Hundred People.
-# An Open-Source Secure Decentralized Messaging Platform
+# The Open-Source Secure Decentralized Messaging Platform.
 
 ![Project Logo](https://www.samirjihadi.com/Cable_Logo_White.png)
 
@@ -42,4 +42,7 @@ Welcome to Cable, our Secure Decentralized Messaging Platform project, developed
 - Build and run the Spring Boot application.
 - Boom. You're in.
 
+##
+
+![Project Logo](https://www.samirjihadi.com/Cable_Logo_Shellhacks_23.png)
   

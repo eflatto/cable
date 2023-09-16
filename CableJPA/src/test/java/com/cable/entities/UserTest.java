@@ -1,3 +1,5 @@
+package com.cable.entities;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.AfterAll;

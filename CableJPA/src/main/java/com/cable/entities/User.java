@@ -1,6 +1,7 @@
 package com.cable.entities;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 import javax.persistence.*;
 
@@ -80,6 +81,30 @@ public class User {
 	public void setCreatedAt(LocalDateTime createdAt) {
 		this.createdAt = createdAt;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", enabled=" + enabled + ", role=" + role + ", username=" + username
+				+ ", password=" + password + ", avatar=" + avatar + ", createdAt=" + createdAt + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(avatar, createdAt, enabled, password, role, userId, username);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		return Objects.equals(avatar, other.avatar) && Objects.equals(createdAt, other.createdAt)
+				&& enabled == other.enabled && Objects.equals(password, other.password)
+				&& Objects.equals(role, other.role) && userId == other.userId
+				&& Objects.equals(username, other.username);
+	}
 }

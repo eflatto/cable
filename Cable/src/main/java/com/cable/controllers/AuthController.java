@@ -2,6 +2,8 @@ package com.cable.controllers;
 
 import java.security.Principal;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,8 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cable.entities.User;
 import com.cable.services.AuthService;
-
-import jakarta.servlet.http.HttpServletResponse;
 
 @RestController
 @CrossOrigin({"*", "http://localhost/"})
@@ -27,13 +27,13 @@ public class AuthController {
 	     return null;
 	  }
 
-	  user.setEnabled(true);
-	  user.setRole("user");
+//	  user.setEnabled(true);
+//	  user.setRole("user");
 	  user = authService.register(user);
 	  return user;
 	}
 	 
-	@GetMapping("authenticate")
+	@GetMapping("authenticated")
 	public User authenticate(Principal principal, HttpServletResponse res) {
 	  if (principal == null) { // no Authorization header sent
 	     res.setStatus(401);

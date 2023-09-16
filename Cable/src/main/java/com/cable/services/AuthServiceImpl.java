@@ -1,16 +1,15 @@
 package com.cable.services;
 
-import javax.persistence.*;
-
-import org.springframework.beans.factory.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 
 import com.cable.entities.User;
 import com.cable.repositories.UserRepository;
 
+@Service
 public class AuthServiceImpl implements AuthService {
-	@PersistenceContext
-	private EntityManager em;
+
 
 	@Autowired
 	private PasswordEncoder encoder;

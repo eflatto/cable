@@ -27,21 +27,19 @@ public class SecurityConfig {
 
 	@Bean
 	public SecurityFilterChain createFilterChain(HttpSecurity http) throws Exception {
-		http.csrf().disable()
-		.authorizeRequests()
-		.requestMatchers(HttpMethod.OPTIONS, "/api/**").permitAll() // For CORS,
+		http.csrf().disable().authorizeRequests().antMatchers(HttpMethod.OPTIONS, "/api/**").permitAll() // For CORS,
 																											// the
 																											// preflight
 																											// request
-				.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll() // will hit the OPTIONS on the route
-				.requestMatchers(HttpMethod.GET, "/api/skills").permitAll() // will hit the OPTIONS on the route
-				.requestMatchers(HttpMethod.GET, "/api/skills/skillLevel").permitAll() // will hit the OPTIONS on the route
-				.requestMatchers(HttpMethod.GET, "/api/tasks").permitAll() // will hit the OPTIONS on the route
-				.requestMatchers(HttpMethod.GET, "/api/users/count").permitAll() // will hit the OPTIONS on the route
-				.requestMatchers(HttpMethod.GET, "/api/taskStatuses").permitAll() // will hit the OPTIONS on the route
-				.requestMatchers(HttpMethod.GET, "/api/posts").permitAll()  // will hit the OPTIONS on the route
-				.requestMatchers(HttpMethod.GET, "/api/posts/search/{keyword}").permitAll()  // will hit the OPTIONS on the route
-				.requestMatchers("/api/**").authenticated() // Requests for our REST API must be authorized.
+				.antMatchers(HttpMethod.OPTIONS, "/**").permitAll() // will hit the OPTIONS on the route
+				.antMatchers(HttpMethod.GET, "/api/skills").permitAll() // will hit the OPTIONS on the route
+				.antMatchers(HttpMethod.GET, "/api/skills/skillLevel").permitAll() // will hit the OPTIONS on the route
+				.antMatchers(HttpMethod.GET, "/api/tasks").permitAll() // will hit the OPTIONS on the route
+				.antMatchers(HttpMethod.GET, "/api/users/count").permitAll() // will hit the OPTIONS on the route
+				.antMatchers(HttpMethod.GET, "/api/taskStatuses").permitAll() // will hit the OPTIONS on the route
+				.antMatchers(HttpMethod.GET, "/api/posts").permitAll()  // will hit the OPTIONS on the route
+				.antMatchers(HttpMethod.GET, "/api/posts/search/{keyword}").permitAll()  // will hit the OPTIONS on the route
+				.antMatchers("/api/**").authenticated() // Requests for our REST API must be authorized.
 				.anyRequest().permitAll() // All other requests are allowed without authentication.
 				.and().httpBasic(); // Use HTTP Basic Authentication
 
@@ -61,4 +59,4 @@ public class SecurityConfig {
 				.authoritiesByUsernameQuery(authQuery).passwordEncoder(encoder);
 	}
 
-}
+}    

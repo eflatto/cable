@@ -45,7 +45,7 @@ class _AuthScreenState extends State<AuthScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 38, 241, 166),
+      backgroundColor: Colors.blueGrey.shade900,
       body: Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -106,8 +106,7 @@ class _AuthScreenState extends State<AuthScreen> {
                     ElevatedButton(
                         onPressed: _submit,
                         style: ElevatedButton.styleFrom(
-                            backgroundColor:
-                                Theme.of(context).colorScheme.primaryContainer),
+                            backgroundColor: Colors.blueGrey.shade200),
                         child: Text(_isLogin ? 'Login' : 'Signup')),
                     TextButton(
                         onPressed: () {

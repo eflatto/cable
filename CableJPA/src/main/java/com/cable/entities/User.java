@@ -11,9 +11,9 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-//	private boolean enabled;
-//	
-//	private String role;
+	private boolean enabled;
+	
+	private String role;
 
 	private String username;
 
@@ -21,6 +21,22 @@ public class User {
 
 	public int getId() {
 		return id;
+	}
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 	public void setId(int id) {

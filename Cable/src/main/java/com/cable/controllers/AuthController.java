@@ -27,13 +27,13 @@ public class AuthController {
 	     return null;
 	  }
 
-	  user.setEnabled(true);
-	  user.setRole("user");
+//	  user.setEnabled(true);
+//	  user.setRole("user");
 	  user = authService.register(user);
 	  return user;
 	}
 	 
-	@GetMapping("authenticate")
+	@GetMapping("authenticated")
 	public User authenticate(Principal principal, HttpServletResponse res) {
 	  if (principal == null) { // no Authorization header sent
 	     res.setStatus(401);

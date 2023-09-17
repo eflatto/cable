@@ -18,7 +18,7 @@ class Cable extends StatelessWidget {
         colorScheme:
             ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 12, 12, 12)),
       ),
-      home: ChatScreen(),
+      home: AuthScreen(),
     );
   }
 }

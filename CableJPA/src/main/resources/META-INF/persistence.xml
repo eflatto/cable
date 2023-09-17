@@ -8,6 +8,7 @@
 	
 	<!-- begin entities -->
     <class>com.cable.entities.User</class>
+    <class>com.cable.entities.Message</class>
   
     <!-- end entities -->
     

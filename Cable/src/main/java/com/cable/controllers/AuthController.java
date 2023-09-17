@@ -27,8 +27,8 @@ public class AuthController {
 	     return null;
 	  }
 
-//	  user.setEnabled(true);
-//	  user.setRole("user");
+	  user.setEnabled(true);
+	  user.setRole("user");
 	  user = authService.register(user);
 	  return user;
 	}

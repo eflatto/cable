@@ -1,6 +1,7 @@
 package com.cable.entities;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.*;
@@ -18,6 +19,12 @@ public class User {
 	private String username;
 
 	private String password;
+	
+	@OneToMany(mappedBy = "sender")
+	private List<Message> sentMessages;
+
+	@OneToMany(mappedBy = "reciever")
+	private List<Message> recievedMessages;
 
 	public int getId() {
 		return id;

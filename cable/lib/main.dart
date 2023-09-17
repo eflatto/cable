@@ -19,7 +19,6 @@ class Cable extends StatelessWidget {
             seedColor: const Color.fromARGB(255, 12, 12, 12)),
       ),
       home: const AuthScreen(),
-      home: AuthScreen(),
     );
   }
 }

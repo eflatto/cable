@@ -6,8 +6,29 @@ void main() {
   runApp(const Cable());
 }
 
-class Cable extends StatelessWidget {
+class Cable extends StatefulWidget {
   const Cable({super.key});
+
+  @override
+  State<Cable> createState() {
+    return _CableState();
+  }
+}
+
+class _CableState extends State<Cable> {
+  Widget? currentScreen;
+
+  @override
+  void initState() {
+    super.initState();
+    currentScreen = AuthScreen(changeScreen);
+  }
+
+  void changeScreen() {
+    setState(() {
+      currentScreen = const ChatScreen();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +36,8 @@ class Cable extends StatelessWidget {
       title: 'Cable',
       theme: ThemeData().copyWith(
         useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(
-            seedColor: const Color.fromARGB(255, 12, 12, 12)),
       ),
-      home: const AuthScreen(),
+      home: currentScreen,
     );
   }
 }

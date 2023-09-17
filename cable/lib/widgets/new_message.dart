@@ -4,13 +4,13 @@ class NewMessage extends StatefulWidget {
   const NewMessage({super.key});
 
   @override
-  State<StatefulWidget> createState() {
+  State<NewMessage> createState() {
     return _NewMessageState();
   }
 }
 
 class _NewMessageState extends State<NewMessage> {
-  var _messageController = TextEditingController();
+  final _messageController = TextEditingController();
 
   @override
   void dispose() {
@@ -32,24 +32,26 @@ class _NewMessageState extends State<NewMessage> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      //add padding
-      children: [
-        Expanded(
-          child: TextField(
-            controller: _messageController,
-            decoration: const InputDecoration(
-                labelText: 'Send a message...', fillColor: Colors.cyan),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+      child: Row(
+        children: [
+          Expanded(
+            child: TextField(
+              controller: _messageController,
+              decoration: const InputDecoration(
+                  labelText: 'Send a message...', fillColor: Colors.cyan),
+            ),
           ),
-        ),
-        IconButton(
-          color: const Color.fromARGB(255, 38, 241, 166),
-          icon: const Icon(
-            Icons.send,
+          IconButton(
+            color: const Color.fromARGB(255, 38, 241, 166),
+            icon: const Icon(
+              Icons.send,
+            ),
+            onPressed: _submitMessage,
           ),
-          onPressed: _submitMessage,
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

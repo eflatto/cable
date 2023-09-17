@@ -24,8 +24,8 @@ CREATE TABLE IF NOT EXISTS `user` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(45) NOT NULL,
   `password` VARCHAR(100) NOT NULL,
-  `avatar` TEXT NOT NULL,
-  `created_at` DATETIME NOT NULL,
+  `avatar` TEXT NULL,
+  `created_at` DATETIME NULL,
   `enabled` TINYINT NULL,
   `role` VARCHAR(45) NULL,
   PRIMARY KEY (`id`))

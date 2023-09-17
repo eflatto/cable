@@ -23,6 +23,8 @@ class _AuthScreenState extends State<AuthScreen> {
   void _authenticate(bool isLogin) async {
     String route;
 
+    widget.onChange();
+
     if (isLogin) {
       route = 'login route here';
     } else {
@@ -34,8 +36,6 @@ class _AuthScreenState extends State<AuthScreen> {
         headers: {'Content-Type': 'application/json'},
         body: json.encode(
             {'username': _enteredUsername, 'password': _enteredPassword}));
-
-    widget.onChange();
   }
 
   void _submit() {
@@ -70,7 +70,7 @@ class _AuthScreenState extends State<AuthScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            margin: const EdgeInsets.all(100),
+            margin: const EdgeInsets.symmetric(horizontal: 200, vertical: 50),
             child: Image.asset('assets/images/cable_logo.png'),
           ),
           Card(
@@ -123,7 +123,7 @@ class _AuthScreenState extends State<AuthScreen> {
                         textInputAction: TextInputAction.done,
                       ),
                       const SizedBox(
-                        height: 20,
+                        height: 25,
                       ),
                       ElevatedButton(
                           onPressed: _submit,

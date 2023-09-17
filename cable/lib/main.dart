@@ -15,9 +15,10 @@ class Cable extends StatelessWidget {
       title: 'Cable',
       theme: ThemeData().copyWith(
         useMaterial3: true,
-        colorScheme:
-            ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 12, 12, 12)),
+        colorScheme: ColorScheme.fromSeed(
+            seedColor: const Color.fromARGB(255, 12, 12, 12)),
       ),
+      home: const AuthScreen(),
       home: AuthScreen(),
     );
   }

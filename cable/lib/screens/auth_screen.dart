@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class AuthScreen extends StatefulWidget {
   const AuthScreen({super.key});
@@ -15,6 +18,22 @@ class _AuthScreenState extends State<AuthScreen> {
   var _enteredPassword = '';
   final _form = GlobalKey<FormState>();
 
+  void _authenticate(bool isLogin) {
+    String route;
+
+    if (isLogin) {
+      route = 'login route here';
+    } else {
+      route = 'register route here';
+    }
+
+    final url = Uri.http('Main Spring domain here', route);
+    http.post(url,
+        headers: {'Content-Type': 'application/json'},
+        body: json.encode(
+            {'username': _enteredUsername, 'password': _enteredPassword}));
+  }
+
   void _submit() {
     final isValid = _form.currentState!.validate();
 
@@ -23,11 +42,11 @@ class _AuthScreenState extends State<AuthScreen> {
     }
 
     _form.currentState!.save();
-    //Send to username and password to backend
+
     if (_isLogin) {
-      //log users in
+      _authenticate(_isLogin);
     } else {
-      //signup users
+      _authenticate(_isLogin);
     }
   }
 
@@ -90,15 +109,6 @@ class _AuthScreenState extends State<AuthScreen> {
                       },
                       onSaved: (value) {
                         _enteredPassword = value!;
-                      },
-                      onFieldSubmitted: (value) {
-                        if (_form.currentState!.validate()) {
-                          _form.currentState!.save();
-                          _enteredPassword = value;
-                          //Send to backend on enter
-                          print(_enteredPassword);
-                          print(_enteredUsername);
-                        }
                       },
                       textInputAction: TextInputAction.done,
                     ),

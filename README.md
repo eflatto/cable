@@ -1,7 +1,7 @@
 # Cable. For Fifteen Hundred People.
 # The Open-Source Secure Decentralized Messaging Platform.
 
-![Project Logo](https://www.samirjihadi.com/Cable_Logo_White.png)
+![Project Logo](https://www.samirjihadi.com/assets/shellhacks/logos/Cable_Logo_White.png)
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -44,5 +44,5 @@ Welcome to Cable, our Secure Decentralized Messaging Platform project, developed
 
 ##
 
-![Project Logo](https://www.samirjihadi.com/Cable_Logo_Shellhacks_23.png)
+![Project Logo](https://www.samirjihadi.com/assets/shellhacks/logos/Cable_Logo_Shellhacks_Alt.png)
   
